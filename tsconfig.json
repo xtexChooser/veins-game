@@ -12,6 +12,7 @@
     "src"
   ],
   "ts-node": {
-    "esm": true
+    "esm": true,
+    "files": true
   }
 }

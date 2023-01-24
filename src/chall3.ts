@@ -28,7 +28,7 @@ V9Tk9fbK/b+BrPRLGyu3FyFl6B5YOrnjDCWkpwcf1tt6uei2vLE=
 =h/mU
 -----END PGP SIGNATURE-----
 
-g2023_1.xtexgame.eu.org. 300    IN
+veins.xtexgame.eu.org. 300    IN
     `.trim();
     }
   );

@@ -9,5 +9,5 @@ RUN yarn build
 FROM docker.io/library/node:current-alpine
 COPY --from=builder /src /app
 WORKDIR /app
-ENTRYPOINT [ "bash", "-c", "yarn start | tee /var/log/stdout.log" ]
+ENTRYPOINT [ "sh", "-c", "yarn start | tee /var/log/stdout.log" ]
 EXPOSE 3000

@@ -11,8 +11,9 @@ export function signToken(req: Request, name: string, email: string): string {
     name,
     email,
     agent: req.headers["user-agent"],
-    roles: ["winner"],
-    toe: Date.now(),
+    roles: ["player"],
+    entitlements: ["winner"],
+    toe: Math.floor(Date.now() / 1000),
     txn: randomUUID(),
   };
   const options: jwt.SignOptions = {
@@ -21,6 +22,6 @@ export function signToken(req: Request, name: string, email: string): string {
     expiresIn: "30 days",
   };
   const token = jwt.sign(payload, JWT_SECRET, options);
-  logger.info({ payload, options, token }, 'signed token')
+  logger.info({ payload, options, token }, "signed token");
   return token;
 }

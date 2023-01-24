@@ -43,7 +43,7 @@ export default function makeEnd(router: Router) {
       );
       return;
     }
-    // no CAPTCHA validation
+    // no more CAPTCHA validation
     const token = signToken(ctx.request, name, email);
     ctx.redirect(
       "/9fc9a653-1639-48ae-8634-69533eaac252/end.html?token=" + token

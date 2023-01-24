@@ -11,7 +11,7 @@ import makeChallenge4 from "./chall4.js";
 import makeChallenge5 from "./chall5.js";
 import makeEnd from "./end.js";
 
-const app = new Koa();
+const app = new Koa({ proxy: true });
 
 const router = new Router();
 

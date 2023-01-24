@@ -6,8 +6,8 @@ export default function makeChallenge2(router: Router) {
     if (
       ctx.headers["forwarded"]?.includes("for=172.2") ||
       ctx.headers["forwarded"]?.includes('for="[fd') ||
-      ctx.headers["x-forwarded-for"]?.toString().startsWith("172.2") ||
-      ctx.headers["x-forwarded-for"]?.toString().startsWith("fd")
+      ctx.headers["x-forwarded-for"]?.toString().includes("172.2") ||
+      ctx.headers["x-forwarded-for"]?.toString().includes("fd")
     ) {
       ctx.body = "thE LinK TO ChALLenGE3 HaVE beeN sENT";
       ctx.res.setHeader(

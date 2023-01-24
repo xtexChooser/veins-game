@@ -29,3 +29,5 @@ app
   .use(serve("public"))
   .use(router.allowedMethods())
   .listen(3000);
+
+logger.info('listening on :3000')

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xtex&apos;s Game 2023-1 - Vines</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spcss@0.9.0" />
+  </head>
+  <body style="color-scheme: dark">
+    <main>
+      <h1>Congratulations!</h1>
+      <p>你成功了，现在可以提交你的信息并获得 Token 了</p>
+      <p>Token 中包含部分隐私信息</p>
+      <code id="token" style="word-break: break-all"></code>
+      <form
+        id="form"
+        action="/9fc9a653-1639-48ae-8634-69533eaac252/end"
+        method="post"
+      >
+        <h3>Form</h3>
+        <h4 id="error" style="color: red"></h4>
+        <div>
+          <label for="name">Name: </label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div>
+          <label for="email">Email: </label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          async
+          defer
+        ></script>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAACHokcdhhIAsUfo"></div>
+        <div>
+          <input type="submit" value="Submit!" />
+        </div>
+      </form>
+      <script type="text/javascript">
+        const errors = {
+          invalid_email: "无效的 Email 地址",
+          name_too_long: "名字过长",
+          email_too_long: "Email 地址过长",
+        };
+        const err = new URL(location).searchParams.get("err");
+        if (err != null && err != "") {
+          document.getElementById("error").innerText = errors[err] || err;
+        }
+        const token = new URL(location).searchParams.get("token");
+        if (token != null && token != "") {
+          document.getElementById("token").innerText = token;
+          document.getElementById("form").remove();
+        }
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

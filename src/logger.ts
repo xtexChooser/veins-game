@@ -1,23 +1,20 @@
-import pino from 'pino'
+import pino from "pino";
 
 const logger = pino({
-    transport: {
-        targets: [
-            {
-                target: 'pino-pretty',
-                options: {
-                    colorize: true
-                },
-                level: 'info'
-            }
-        ]
-    },
-    redact: {
-        paths: [
-            "req['headers']",
-            "res['headers']"
-        ]
-    }
-})
+  transport: {
+    targets: [
+      {
+        target: "pino-pretty",
+        options: {
+          colorize: true,
+        },
+        level: "info",
+      },
+    ],
+  },
+  redact: {
+    paths: ["req['headers']", "res['headers']"],
+  },
+});
 
-export default logger
+export default logger;

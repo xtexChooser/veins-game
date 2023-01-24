@@ -5,28 +5,26 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.7
 
-declare module 'koa-pino-logger' {
+declare module "koa-pino-logger" {
+  import { Middleware as BaseMiddleware } from "koa";
+  import { DestinationStream, Logger } from "pino";
+  import { Options } from "pino-http";
 
-    import { Middleware as BaseMiddleware } from 'koa';
-    import { DestinationStream, Logger } from 'pino';
-    import { Options } from 'pino-http';
+  export = logger;
 
-    export = logger;
+  interface Middleware extends BaseMiddleware {
+    logger: Logger;
+  }
 
-    interface Middleware extends BaseMiddleware {
-        logger: Logger;
+  declare function logger(
+    opts?: Options,
+    stream?: DestinationStream
+  ): Middleware;
+  declare function logger(stream?: DestinationStream): Middleware;
+
+  declare module "koa" {
+    interface ExtendableContext {
+      log: Logger;
     }
-
-    declare function logger(
-        opts?: Options,
-        stream?: DestinationStream
-    ): Middleware;
-    declare function logger(stream?: DestinationStream): Middleware;
-
-    declare module 'koa' {
-        interface ExtendableContext {
-            log: Logger;
-        }
-    }
-
+  }
 }

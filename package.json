@@ -13,10 +13,12 @@
     "format": "prettier --write src/**"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.1",
     "@types/koa": "^2.13.5",
     "@types/koa-static": "^4.0.2",
     "@types/koa__router": "^12.0.0",
     "@types/node": "^18.0.26",
+    "@types/validator": "^13.7.10",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "eslint": "^8.32.0",
@@ -28,10 +30,13 @@
   },
   "dependencies": {
     "@koa/router": "^12.0.0",
+    "jsonwebtoken": "^9.0.0",
     "koa": "^2.14.1",
+    "koa-body": "^6.0.1",
     "koa-pino-logger": "^4.0.0",
     "koa-static": "^5.0.0",
-    "pino": "^8.8.0"
+    "pino": "^8.8.0",
+    "validator": "^13.7.0"
   },
   "nodemonConfig": {
     "ignore": [

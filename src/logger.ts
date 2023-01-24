@@ -10,6 +10,16 @@ const logger = pino({
         },
         level: "info",
       },
+      {
+        target: 'pino-tee',
+        options: {
+          filters: {
+            info: '/var/logs/info.log',
+            warn: '/var/logs/warn.log'
+          }
+        },
+        level: "info"
+      }
     ],
   },
   redact: {

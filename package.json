@@ -36,6 +36,7 @@
     "koa-pino-logger": "^4.0.0",
     "koa-static": "^5.0.0",
     "pino": "^8.8.0",
+    "pino-tee": "^0.3.0",
     "validator": "^13.7.0"
   },
   "nodemonConfig": {
